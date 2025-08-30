@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @OptIn(ExperimentalCoroutinesApi::class)
 @Singleton
 class MqttConnectionManager @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context // Required for dependency injection, may be used for future system services
 ) {
     
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -53,6 +53,7 @@ class MqttConnectionManager @Inject constructor(
     /**
      * Connect to MQTT broker
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun connect(
         brokerId: String,
         brokerUrl: String,
@@ -73,8 +74,8 @@ class MqttConnectionManager @Inject constructor(
                 
                 val connOpts = MqttConnectOptions().apply {
                     isCleanSession = cleanSession
-                    this.keepAliveInterval = keepAliveInterval
-                    this.connectionTimeout = connectionTimeout
+                    keepAliveInterval = keepAliveInterval
+                    connectionTimeout = connectionTimeout
                     
                     if (username != null && password != null) {
                         userName = username
@@ -124,11 +125,7 @@ class MqttConnectionManager @Inject constructor(
                 updateConnectionState(brokerId, MqttConnectionState.CONNECTING)
                 
                 // Connect with callback
-                val connectResult = suspendCancellableCoroutine<Boolean>(
-                    onCancellation = {
-                        // Handle cancellation if needed
-                    }
-                ) { continuation ->
+                val connectResult = suspendCancellableCoroutine<Boolean> { continuation ->
                     client.connect(connOpts, null, object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken) {
                             continuation.resume(true)
@@ -159,16 +156,13 @@ class MqttConnectionManager @Inject constructor(
     /**
      * Disconnect from MQTT broker
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun disconnect(brokerId: String): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {
                 val client = mqttClients[brokerId]
                 if (client != null && client.isConnected) {
-                    suspendCancellableCoroutine<Boolean>(
-                        onCancellation = {
-                            // Handle cancellation if needed
-                        }
-                    ) { continuation ->
+                    suspendCancellableCoroutine<Boolean> { continuation ->
                         client.disconnect(null, object : IMqttActionListener {
                             override fun onSuccess(asyncActionToken: IMqttToken) {
                                 continuation.resume(true)
@@ -194,6 +188,7 @@ class MqttConnectionManager @Inject constructor(
     /**
      * Subscribe to MQTT topics
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun subscribe(
         brokerId: String,
         topics: List<String>,
@@ -210,11 +205,7 @@ class MqttConnectionManager @Inject constructor(
                     qos
                 }
                 
-                val subscribeResult = suspendCancellableCoroutine<Boolean>(
-                    onCancellation = {
-                        // Handle cancellation if needed
-                    }
-                ) { continuation ->
+                val subscribeResult = suspendCancellableCoroutine<Boolean> { continuation ->
                     client.subscribe(topics.toTypedArray(), actualQos, null, object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken) {
                             continuation.resume(true)
@@ -241,17 +232,14 @@ class MqttConnectionManager @Inject constructor(
     /**
      * Unsubscribe from MQTT topics
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun unsubscribe(brokerId: String, topics: List<String>): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {
                 val client = mqttClients[brokerId]
                     ?: return@withContext Result.failure(Exception("Not connected to broker"))
                 
-                val unsubscribeResult = suspendCancellableCoroutine<Boolean>(
-                    onCancellation = {
-                        // Handle cancellation if needed
-                    }
-                ) { continuation ->
+                val unsubscribeResult = suspendCancellableCoroutine<Boolean> { continuation ->
                     client.unsubscribe(topics.toTypedArray(), null, object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken) {
                             continuation.resume(true)
@@ -278,6 +266,7 @@ class MqttConnectionManager @Inject constructor(
     /**
      * Publish message to MQTT topic
      */
+    @OptIn(ExperimentalCoroutinesApi::class)
     suspend fun publish(
         brokerId: String,
         topic: String,
@@ -295,11 +284,7 @@ class MqttConnectionManager @Inject constructor(
                     isRetained = retained
                 }
                 
-                val publishResult = suspendCancellableCoroutine<Boolean>(
-                    onCancellation = {
-                        // Handle cancellation if needed
-                    }
-                ) { continuation ->
+                val publishResult = suspendCancellableCoroutine<Boolean> { continuation ->
                     client.publish(topic, message, null, object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken) {
                             continuation.resume(true)
