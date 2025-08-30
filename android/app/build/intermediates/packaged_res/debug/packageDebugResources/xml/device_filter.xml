@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USB device filter for common IoT devices -->
+    <usb-device 
+        vendor-id="1027" 
+        product-id="24577" />
+    <!-- FTDI USB Serial devices -->
+    <usb-device 
+        vendor-id="1027" 
+        product-id="24596" />
+    <!-- Arduino devices -->
+    <usb-device 
+        vendor-id="9025" 
+        product-id="67" />
+    <!-- CH340 Serial devices -->
+    <usb-device 
+        vendor-id="6790" 
+        product-id="29987" />
+    <!-- CP2102 Serial devices -->
+    <usb-device 
+        vendor-id="4292" 
+        product-id="60000" />
+</resources>

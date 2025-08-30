@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- TODO: Use <include> and <exclude> to control what is backed up.
+             Include files that you want to be backed up and exclude files that
+             contain sensitive information. -->
+        <exclude domain="sharedpref" path="user_credentials.xml" />
+        <exclude domain="sharedpref" path="device_secrets.xml" />
+        <exclude domain="database" />
+        <exclude domain="cache" />
+    </cloud-backup>
+    <device-transfer>
+        <!-- TODO: Use <include> and <exclude> to control what is transferred.
+             Include files that should be transferred and exclude files that
+             contain sensitive information. -->
+        <exclude domain="sharedpref" path="user_credentials.xml" />
+        <exclude domain="sharedpref" path="device_secrets.xml" />
+        <exclude domain="database" />
+        <exclude domain="cache" />
+    </device-transfer>
+</data-extraction-rules>

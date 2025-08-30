@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.iotlogic.blynk.app-mergeDebugResources-3:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\8.13\\transforms\\22bab2390fe9e04a13b6a177b892523d\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\8.13\\transforms\\7dda4e8dc2b7b5d4d59b46086b13dcfd\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

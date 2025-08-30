@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IoTLogic Blynk</string>
+    
+    <!-- Main Navigation -->
+    <string name="nav_devices">Devices</string>
+    <string name="nav_telemetry">Telemetry</string>
+    <string name="nav_configuration">Configuration</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Device Management -->
+    <string name="device_list_title">My Devices</string>
+    <string name="device_add">Add Device</string>
+    <string name="device_connect">Connect</string>
+    <string name="device_disconnect">Disconnect</string>
+    <string name="device_delete">Delete</string>
+    <string name="device_status_connected">Connected</string>
+    <string name="device_status_disconnected">Disconnected</string>
+    <string name="device_status_connecting">Connecting</string>
+    <string name="device_status_error">Error</string>
+    
+    <!-- Protocols -->
+    <string name="protocol_bluetooth">Bluetooth LE</string>
+    <string name="protocol_wifi">WiFi</string>
+    <string name="protocol_usb">USB Serial</string>
+    <string name="protocol_mqtt">MQTT</string>
+    
+    <!-- Permissions -->
+    <string name="permission_bluetooth_title">Bluetooth Access</string>
+    <string name="permission_bluetooth_description">Required for Bluetooth LE device scanning and communication</string>
+    <string name="permission_location_title">Location Access</string>
+    <string name="permission_location_description">Required for device location tracking and Bluetooth LE scanning</string>
+    <string name="permission_camera_title">Camera Access</string>
+    <string name="permission_camera_description">Required for QR code scanning for device setup</string>
+    <string name="permission_wifi_title">WiFi Access</string>
+    <string name="permission_wifi_description">Required for WiFi network management and device discovery</string>
+    
+    <!-- Telemetry -->
+    <string name="telemetry_title">Device Telemetry</string>
+    <string name="telemetry_sensor_temperature">Temperature</string>
+    <string name="telemetry_sensor_humidity">Humidity</string>
+    <string name="telemetry_sensor_motion">Motion</string>
+    <string name="telemetry_sensor_light">Light</string>
+    <string name="telemetry_no_data">No telemetry data available</string>
+    
+    <!-- Configuration -->
+    <string name="config_title">Device Configuration</string>
+    <string name="config_save">Save</string>
+    <string name="config_reset">Reset to Defaults</string>
+    <string name="config_category_network">Network</string>
+    <string name="config_category_sensor">Sensor</string>
+    <string name="config_category_power">Power</string>
+    
+    <!-- Common Actions -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_scan">Scan</string>
+    
+    <!-- Messages -->
+    <string name="message_loading">Loading…</string>
+    <string name="message_error_generic">An error occurred</string>
+    <string name="message_no_devices">No devices found</string>
+    <string name="message_device_added">Device added successfully</string>
+    <string name="message_device_updated">Device updated successfully</string>
+    <string name="message_device_deleted">Device deleted successfully</string>
+    <string name="message_connecting">Connecting to device…</string>
+    <string name="message_connected">Connected successfully</string>
+    <string name="message_disconnected">Disconnected</string>
+    
+    <!-- Hardware -->
+    <string name="hardware_bluetooth_disabled">Bluetooth is disabled</string>
+    <string name="hardware_wifi_disabled">WiFi is disabled</string>
+    <string name="hardware_location_disabled">Location services disabled</string>
+    
+    <!-- Services -->
+    <string name="service_device_connection">Device Connection Service</string>
+    <string name="service_mqtt">MQTT Service</string>
+    <string name="service_notification_channel">Device Services</string>
+    
+    <!-- Content Descriptions -->
+    <string name="cd_device_icon">Device icon</string>
+    <string name="cd_connection_status">Connection status indicator</string>
+    <string name="cd_signal_strength">Signal strength indicator</string>
+    <string name="cd_battery_level">Battery level indicator</string>
+</resources>

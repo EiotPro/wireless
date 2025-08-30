@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude shared preferences that contain sensitive data -->
+    <exclude domain="sharedpref" path="user_credentials.xml" />
+    <exclude domain="sharedpref" path="device_secrets.xml" />
+    
+    <!-- Exclude database files -->
+    <exclude domain="database" path="iotlogic_database" />
+    <exclude domain="database" path="iotlogic_database-shm" />
+    <exclude domain="database" path="iotlogic_database-wal" />
+    
+    <!-- Exclude temporary files -->
+    <exclude domain="file" path="temp/" />
+    <exclude domain="cache" />
+</full-backup-content>

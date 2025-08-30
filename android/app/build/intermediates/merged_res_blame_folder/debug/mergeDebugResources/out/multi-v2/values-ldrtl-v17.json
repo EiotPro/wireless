@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.iotlogic.blynk.app-mergeDebugResources-3:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Dell\\.gradle\\caches\\8.13\\transforms\\9d9ba09edd70a83ff2f792adf482c992\\transformed\\material-1.10.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,191",
+                        "endColumns": "135,140",
+                        "endOffsets": "186,327"
+                    }
+                }
+            ]
+        }
+    ]
+}
